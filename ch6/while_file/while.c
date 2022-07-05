@@ -43,7 +43,7 @@ int main()
     return 0;
     */
 
-    /* 진입조건 루프 */
+    /* 진입조건 루프 (entry-condition loop) */
     // while의 기본 문법
     // while (expression)   // expression이 0이면 false 수행 X, 0이 아닌 값이면 수행
     //    statement
