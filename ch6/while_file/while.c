@@ -93,7 +93,7 @@ int main()
     */
 
     /* <ex3> */
-    
+
     while (scanf("%d", &i) == 1)    // 실행은 가능하지만 보기 좋지않기 때문에 사용 X
         ;   // null statement
     // do something
