@@ -73,8 +73,15 @@ int main()
         printf("%d\n", n);
     }
 
-    for ( ; ; )     // while 문과 같다.
+    for ( ; ; )     // while과 같다.
         printf("Hello!");
 
     return 0;
 }
+
+/* for vs while */
+// 대부분의 경우 for문을 많이 사용
+// for (;test;)  while (test), test하나만 필요한 경우 while
+// init, update가 필요한 경우 for
+// for (int i = 0; i < 100; ++i), 메모리 구조에 맞춰 counting을 하는 경우 for
+// while (scanf("%d", &num) == 1), 사람이 개입할 경우 while
