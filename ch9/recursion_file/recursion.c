@@ -26,7 +26,7 @@ void my_func(int n) // 함수도 스택이 쌓인다. (때문에 n의 주소의 
 */
 
 /* 재귀 호출을 이용한 팩토리얼 */
-
+/*
 #include <stdio.h>
 
 long loop_factorial(int n);
@@ -61,3 +61,79 @@ long recursive_factorial (int n)
     else    
         return 1;
 }
+*/
+
+/* 2진수 변환 */
+/*
+#include <stdio.h>
+
+void print_binary(unsigned long n);
+void print_binary_loop(unsigned long n);
+
+int main()
+{
+    unsigned long num = 10;
+
+    print_binary(num);  // 1010
+    printf("\n");
+    print_binary_loop(num); // 0101
+    printf("\n");
+
+    return 0;
+}
+
+void print_binary_loop(unsigned long n)
+{
+    while(1)
+    {
+        int quotient = n / 2;
+        int remainder = n % 2;
+
+        printf("%d", remainder);
+
+        n = quotient;
+
+        if (n == 0)
+            break;
+    }
+}
+
+void print_binary(unsigned long n)
+{
+    int remainder = n % 2;
+
+    if (n >= 2)
+        print_binary(n / 2);
+    printf("%d", remainder);
+    
+    return;
+}
+*/
+
+/* 피보나치 수열 */
+
+#include <stdio.h>
+
+int fibonacci(int number);
+
+int main()
+{
+    for (int count = 1; count < 13; ++count)
+        printf("%d", fibonacci(count));
+
+    return 0;
+}
+
+int fibonacci(int number)
+{
+    if (number > 2)
+    {
+        return fibonacci(number - 1) + fibonacci(number -2);
+    }
+    else    
+        return 1;
+}
+
+/* 재귀 호출의 장단점 */
+// 장점 : 수학적으로 정의가 되어있는 경우에 식이 간결해진다.
+// 단점 : 메모리를 많이 사용한다, 계산에 중복이 생긴다.
