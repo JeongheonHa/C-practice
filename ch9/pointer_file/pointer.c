@@ -5,7 +5,7 @@
 // int형 a변수의 주소를 저장하기 위해 int를 선언
 // a_ptr또한 변수이며 주소를 저장하는 데이터이다.
 // 장점 : 데이터가 큰 경우에 해당 메모리를 복사하는 것이 아닌 위치를 가리켜 가져오는 것이기때문에 메모리를 적게 차지한다.
-
+/*
 #include <stdio.h>
 
 int main()
@@ -35,5 +35,46 @@ int main()
     printf("%d\n", b);
     printf("%d %d %p %p\n", a, *a_ptr, a_ptr, &b);
 
+    return 0;
+}
+*/
+
+/* NULL pointer & runtime error */
+
+#include <stdio.h>
+
+int main()
+{
+    /* runtime error */
+
+    // 정수형 vs pointer 초기화 비교
+    // <1> int init
+    int a = 123;  // 정수형이 원래 저장될 수 있는 공간에 123이라는 값을 넣는 것 
+    printf("%p\n", &a);
+    printf("%d\n", a);
+
+    // <2> ptr init
+    int *ptr = 123;   // 이 메모리 공간의 주소를 가져와라  
+
+    printf("%p\n", ptr);
+    printf("%d\n", *ptr);   // 123이라는 주소에 가서 저장된 데이터를 가져오려고 하지만 할당된 데이터가 없어서 runtime error발생
+
+    /* NULL pointer */
+
+    int *safer_ptr = NULL;  // null : 0
+
+    int a;
+    int b;
+    scanf("%d", &b);
+
+    if (b % 2 == 0) 
+        safer_ptr = &a; // b의 값에 따라 초기화 값이 변하는 경우 초기화가 안될 것을 경우가 있어 NULL을 대입
+
+    if (safer_ptr != NULL)
+        printf("%p\n", safer_ptr);
+
+    if (safer_ptr != NULL)
+        printf("%d\n", *safer_ptr);
+    
     return 0;
 }
