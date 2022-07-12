@@ -54,7 +54,7 @@ int main()
 
     // ptr3 = ptr3 - 4;    // subtracing an integer from a pointer
 
-    // ptrintf("%p %d %p\n", ptr3, *ptr3, &ptr3); 
+    // printf("%p %d %p\n", ptr3, *ptr3, &ptr3); 
 
     // ptr1++;
     // ptr1--;
