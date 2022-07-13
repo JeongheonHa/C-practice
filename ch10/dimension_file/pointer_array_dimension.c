@@ -47,7 +47,7 @@ int main()
     {
         for (int i = 0; i < 3; ++i)
             printf("%d %d %d %d\n", 
-                arr[j][i], parr[j][i], *(parr[j] + i), *((*parr + j) + i)); // 4개 다 같은 의미
+                arr[j][i], parr[j][i], *(parr[j] + i), *(*(parr + j) + i)); // 4개 다 같은 의미
         printf("\n");
     }
     printf("\n");
