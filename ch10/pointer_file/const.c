@@ -40,11 +40,12 @@ void print_array(const int arr[], const int n)
     printf("\n");
 }
 
-void add_value(int arr[], const int n, const int val)   // 주소에 값을 일일이 더해주고 있기 때문에 return 값이 없어도 있는 것과 같은 기능을 한다.
+void add_value(int a[], const int n, const int val)   // 주소에 값을 일일이 더해주고 있기 때문에 return 값이 없어도 있는 것과 같은 기능을 한다.
+                                                      // int a[]는 배열의 첫번째 주소(인자)를 매개변수로 가져와 사용
 {
     int i;
     for (i = 0; i < n; i++)
-        arr[i] += val;
+        a[i] += val;    // a[i] : 포인터 변수 a에 저장되있는 값은 배열의 주소 arr이므로 arr[i]로 볼 수 있다. (배열에 직접 접근)
 }
 
 int sum(const int ar[], const int n)  // const를 함으로서 미리 의도를 명확히 하여 실수를 방지할 수 있다.
