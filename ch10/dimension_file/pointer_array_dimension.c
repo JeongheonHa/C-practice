@@ -23,7 +23,7 @@ int main()
 
     // int arr[2][3] = { {1, 2, 3}, {4, 5, 6}};
 
-    // int *parr0 = arr[0];    
+    // int *parr0 = arr[0]; // 이중 배열의 주소는 arr[]로 표현
     // int *parr1 = arr[1];
 
     // for (int i = 0; i < 3; ++i)
@@ -40,8 +40,8 @@ int main()
 
     // int* parr[2] = { arr[0], arr[1] };   // 아래와 같은 표현
     int* parr[2];
-    parr[0] = arr[0];
-    parr[1] = arr[1];
+    parr[0] = arr[0];   // 배열 parr의 첫번째 공간에 arr[0]라는 주소를 저장
+    parr[1] = arr[1];   // 배열 parr의 두번째 공간에 arr[1]라는 주소를 저장
 
     for (int j = 0; j < 2; ++j)
     {
@@ -82,8 +82,8 @@ int main()
 
     // <다른 풀이> 
     char aname[][15] = {"Aladdin", "Jasmine", "Magic Carpet", "Genie", "Jafar"};
-
-    const int an = sizeof(aname) / sizeof(char[15]);
+    // 두번째 차원에서 메모리 공간이 15개로 정해져있는 배열, 남는 공간은 '\0'(널 문자)로 채워진다.
+    const int an = sizeof(aname) / sizeof(char[15]);    // 행 5개 * 열 15개 메모리 크기 / char타입 열 15개 배열의 메모리 크기
 
     for (int i = 0; i < an; ++i)
         printf("%s at %llu\n", aname[i], (unsigned long long)&aname[i]);   // 배열의 길이 15만큼 메모리 사이즈 증가.
