@@ -13,10 +13,10 @@ int main()
 
     // printf("%d\n\n", arr[1][1]);
 
-    // for (int y = 0; y < 2; ++y) // 2차원 배열을 반복문으로 돌릴 때 y를 바깥쪽 루프
+    // for (int j = 0; j < 2; ++j) // 2차원 배열을 반복문으로 돌릴 때 j를 바깥쪽 루프
     // {
     //     for (int i = 0; i < 3; ++i) // i를 안쪽 루프
-    //         printf("%d ", arr[y][i]);
+    //         printf("%d ", arr[j][i]);
 
     //     printf("\n");
     // }
