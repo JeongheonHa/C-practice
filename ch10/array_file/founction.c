@@ -65,7 +65,7 @@ double average(double* start, double* end)
     double avg = 0.0;
     while (start < end)
     {
-        avg += *start++;
+        avg += *start++;    // 후위 연산자는 sequence point(;)를 만난 후 연산
         // count++; // while문 안에서 증가시키는 것이 부담일 경우 count변수 선언할때 end - start를 대입
     }
     avg /= (double)count;
