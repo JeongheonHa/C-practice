@@ -26,7 +26,7 @@ int main()
 
     // int *ptr = &arr[0][0];  // arr를 ptr로 바꾸고 1차원 배열인 것 처럼 사용 가능
     // for (int k = 0; k < 6; ++k)
-    //     printf("%d ", ptr[k]);
+    //     printf("%d ", ptr[k]);   // ptr[k] : ptr변수의 k번째 값, 변수의 메모리 공간에는 2차원 배열의 첫번째 주소가 담겨있다. ->  첫번째 주소의 k번째 값
     // printf("\n\n");
 
     // printf("%zd %zd\n", sizeof(arr), sizeof(arr[0]));   // 24 12, arr[0]의 경우 0행의 배열 3개의 사이즈

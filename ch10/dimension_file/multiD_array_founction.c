@@ -23,7 +23,7 @@ int main()
     printf("%d\n", data[2][3]);
 
     int* ptr = &data[0][0];
-    printf("Sum of all elements = %d\]n", sum2d_1(data));
+    printf("Sum of all elements = %d\n", sum2d_1(data));
     printf("%d\n", *(ptr + 3 + COLS * 2));  // 1차원 array를 2차원 array처럼 접근
 
     printf("Sim of all elements = %d\n", sum2d_1(data));
