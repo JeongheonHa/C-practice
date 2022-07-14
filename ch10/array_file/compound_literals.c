@@ -21,6 +21,7 @@ int main()
 
     // <실질적인 예>
     // <1>  배열의 경우
+    // 배열의 이름 대신 compound literal 사용
     int arr1[2] = {1, 2};
     int arr2[2][COLS] = { {1, 2, 3, 4}, {5, 6, 7, 8} };
 
@@ -33,6 +34,7 @@ int main()
     printf("\n");
 
     // <2>  포인터의 경우
+    // 배열의 자체 주소인 배열의 이름 대신 compound literal 사용
     int* ptr1;
     int(*ptr2)[COLS];
 
