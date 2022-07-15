@@ -63,7 +63,7 @@ int main()
     //     (unsigned long long)pt2, (unsigned long long)pt3, (unsigned long long)pt4,
     //     (unsigned long long)"I am a string!.");
     // // 4301963091 4301963091 4301963072 4301963091
-    // // pt4가 가리키는 주소 값이 다르다.
+    // // pt4가 가리키는 주소 값만 다르다.
     // // c 언어 컴파일러는 동일한 문자열 리터럴이 프로그램 여러 곳에서 사용될 경우 한 곳에만 저장하고 공유해서 사용하기 때문에 같은 주소가 나온다
 
     // printf("stack high \t%llu %llu %llu %llu\n",
