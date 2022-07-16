@@ -34,7 +34,7 @@ int main()
         printf("%-30s %-30s\n", mythings[i], yourthings[i]);
 
     printf("\nsizeof mythings: %zd, sizeof your yourthings: %zd\n",
-        sizeof(mythings), sizeof(yourthings));
+        sizeof(mythings), sizeof(yourthings));  // 40 (포인터 배열 5개의 주소) 200(행 5 * 열 40)
 
     for (int i = 0; i < 100; i++)
         printf("%c", mythings[0][i]);

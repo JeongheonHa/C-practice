@@ -51,7 +51,7 @@ int main()
 
     // <1>
     // fgets(small_array, 5, stdin);   // 123456789 입력
-    // fputs(small_array,stdout);  // 1234 출력 (\n포함 5개)
+    // fputs(small_array, stdout);  // 1234 출력 (\n포함 5개)
 
     // <2>
     // // fgets함수를 사용할 경우 반환 값이 존재한다. 정상적으로 입력을 받을 경우 입력받은 포인터를 반환
