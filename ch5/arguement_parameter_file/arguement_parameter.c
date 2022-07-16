@@ -19,7 +19,7 @@ int main()
     return 0;
 }
 
-void draw(int n)    // int n : 변수(parameter), founction draw가 variable n에 대해서 매개변수화 되어있다.
+void draw(int n)    // int n : 변수(parameter), function draw가 variable n에 대해서 매개변수화 되어있다.
 {
     while (n-- > 0)
         printf("*");

@@ -26,6 +26,6 @@ int main()
         printf("%d\n", x);
     }
         
-    y = (4 + x++) + (6 + x++);  // sequnence point가 모호해서 시스템마다 게산값이 달라질 수 있다.
+    y = (4 + x++) + (6 + x++);  // sequnence point가 모호해서 시스템마다 계산값이 달라질 수 있다.
     */
 }
