@@ -74,7 +74,7 @@ int main()
     char* name[] = {"Aladdin", "Jasmine", "Magic Carpet", "Genie"}; // name : char타입에 대한 포인터의 배열
     // name이라는 포인터의 배열에 4개의 원소가 담겨있다. (4개의 원소 : 각 문자열의 첫번째 주소)
 
-    const int n = sizeof(name) / sizeof(char*); // n = 4
+    const int n = sizeof(name) / sizeof(char*); // n = 4, name 포인터 배열의 사이즈 4 / 포인터 한칸이 받은 자료형의 사이즈 
 
     for (int i = 0; i < n; ++i)
         printf("%s at %llu\n", name[i], (unsigned long long)name[i]);   // 글자 수 만큼 메모리 사이즈가 차이난다. (64 bit에서는 long long 사용)
