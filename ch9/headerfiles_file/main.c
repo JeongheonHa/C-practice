@@ -5,7 +5,7 @@
 
 // #include <stdio.h> header file에서 이미 선언했기 때문에 필요 X
 
-#include "my_print_founction.h"
+#include "my_print_function.h"
 #include <stdio.h>
 
 int main()
