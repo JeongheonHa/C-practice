@@ -58,29 +58,34 @@ int main()
 
     // char dest[100] = "";
     // char source[] = "Start programming!";
-    // // dest = source;  // error
-    // // dest = "Start something";   // error
+    // dest = source;  // error
+    // dest = "Start something";   // error
+
     // strcpy(dest, source);   // source를 destination에 복사
+
     // strncpy(dest, source, 5);   // Start 복사 (\0은 추가되지 않는다. 온전히 5글자만 복사)
+
     // strcpy(dest, source + 6);   // 포인터 연산 이용 (복사 시작위치를 바꿀 수 있다)
+
     // strcpy(dest, source);
     // strcpy(dest + 6, "coding!");    // Start coding!, 6번째 글자 다음부터 복사
+
     // puts(dest);
 
     /* sprintf() */
     // 연속되는 파일을 자동으로 생성할때 파일의 이름을 문자열로 만들어 유용하게 사용
     // ex) capture00000.png, capture00001.png ...\
 
-    // char str[100] = "";
-    // int i = 123;
-    // double d = 3.14;
-    // sprintf(str, "%05d.png %f", i, d);  // printf()를 str문자열에 해준다.
-    // puts(str);
+    char str[100] = "";
+    int i = 123;
+    double d = 3.14;
+    sprintf(str, "%05d.png %f", i, d);  // printf()를 str문자열에 해준다.
+    puts(str);  // 00123.png 3.140000
 
     /* 이 밖의 함수들 */
     printf("%s\n", strchr("Hello, World", 'W'));    // World, 'W'글자가 시작하는 문자열의 포인터를 리턴 -> 포인터를 스트링으로 출력
     printf("%s\n", strpbrk("Hello, World", "ABCDE"));   // (null), ABCDE 중에서 하나로 시작되는 문자를 찾아 포인터 리턴
-    printf("%s\n", strchr("Hello, World", "abcde"));    // ello, World, abcde 중에서 하나로 시작되는 문자를 찾아 포인터 리턴
+    printf("%s\n", strpbrk("Hello, World", "abcde"));    // ello, World, abcde 중에서 하나로 시작되는 문자를 찾아 포인터 리턴
     printf("%s\n", strrchr("Hello, World, Hello, World", 'l')); // ld , 'l' 글자가 나타나는 가장 마지막 포인터를 리턴
     printf("%s\n", strstr("Hello, World", "wor"));  // (null), 문자열 끼리 비교
     printf("%s\n", strstr("Hello, World", "Wor"));  // World , 문자열 끼리 비교해서 일치하는 문자열의 포인터 리턴
