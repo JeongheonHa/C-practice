@@ -10,7 +10,7 @@ char arr[] = "Hello, World";
 char* str = "Hello, World";
 str[0] = 'M';   // error
 - 문자열의 첫번째 주소를 가리키고있는 상황
-- 문자열 데이터가 담겨있는 메모리 공간을 바꿀 권한은 없다.
+- 문자열 데이터가 담겨있는 메모리 공간을 바꿀 권한은 없다. (TEXT Segment는 read만 할 수 있기 때문에)
 - c 언어 컴파일러는 동일한 문자열 리터럴이 프로그램 여러 곳에서 사용될 경우 한 곳에만 저장하고 공유해서 사용 (메모리 절약)
 - 여러 포인터가 동일한 문자열을 가리키는 경우가 발생할 경우 문자열 리터럴 값이 변경되는 것을 막는 기능도 한다.
 */
@@ -93,8 +93,8 @@ int main()
     // char* p6 = (char*)malloc(sizeof(char) * 100);
     // printf("Heap middle \t%llu\n", (unsigned long long)p6); // 5114980352
 
-    // ar1++;   // error
-    pt2++;  // 가능
+    // ar1++;   // error, ar1 = ar1 + 1을 의미하는데 배열의 대표 주소를 바꿀 수 없기때문에 error발생
+    pt2++;  // 가능, TEXT Segment내에 있는 문자열 배열의 주소를 가리키는 방향만 바꿀 뿐이기 때문에 가능.
     puts(pt2);  //  am a string!. , 증가 연산자로 I 다음부터 출력
 
 
@@ -120,7 +120,7 @@ int main()
     putchar('\n');
 
     while (*(head) != '\0')
-        putchar(*(head++));
+        putchar(*(head++)); // 후위 연산자는 sequence point를 만난 후에 연산
 
     head = heart;   // 배열의 이름을 포인터 변수에 대입 가능, 배열의 이름은 포인터와 문법적으로 호환이되게 compiler가 허용
     // heart = head; // error
