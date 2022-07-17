@@ -4,7 +4,7 @@
 
 int main()
 {
-    const char* mythings[5] = { // text segment안에 저장되어있는 문자열을 포인터로 가리키는 형태 
+    const char* mythings[5] = { // text segment안에 저장되어있는 문자열을 포인터로 가리키는 형태 , (이중 배열의 형태)
         "Dancing in the rain",
         "Counting apples",
         "Watching movies with friends",
