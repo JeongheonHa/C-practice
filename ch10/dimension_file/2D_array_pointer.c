@@ -75,7 +75,7 @@ int main()
     // float* ap[2]
     printf("%llu %llu\n", (unsigned long long)ap, (unsigned long long)(ap + 1));    // 6136525888 6136525896, ap : 포인터를 담는 배열이 새로 생겨난 것
     printf("%llu\n", (unsigned long long)&ap);  // 6136525888, ap는 포인터이지만 배열로서 만들어졌기 때문에 배열의 성질을 갖는다. 배열의 이름이 배열의 대표 주소인 것 처럼
-    //  ap + 1은 arr2d가 담긴 포인터 변수 ap[1]의 주소를 말하는 것이다.
+    //  ap + 1은 arr2d[1]가 담긴 포인터 변수 ap[1]의 주소를 말하는 것이다.
     printf("%llu %llu\n", (unsigned long long)arr2d[0], (unsigned long long)arr2d[1]); // 6136525904 6136525920
     printf("%llu %llu\n", (unsigned long long)ap[0], (unsigned long long)(ap[0] + 1)); // 6136525904 6136525908
     printf("%f\n", ap[0][0]);
