@@ -51,20 +51,21 @@ int main(int argc, char * argv[])
         strtod()는 converts base 10 only (strtoi와 유사), 나머지는 base가 자유롭다.
     */
 
-    // char str1[] = "-1024Hello";
+    // char str1[] = "1024Hello";
     // char* end;
-    // long l = strtol(str1, &end, 10);    // 10진수
-    // printf("%s %ld %s %d\n", str1, l, end, (int)*end);
+    // long l = strtol(str1, &end, 10);    // 10진수로 바꾼다. (&end는 이중 포인터)
+    // printf("%s %ld %s %d\n", str1, l, end, (int)*end);   // 1024Hello 1024 Hello 72
+    // // str1문자열을 10진수로 변환하다가 변환이 안되는 부분의 포인터를 end에 넣는다.
 
     // char str2[] = "10FFHello";
     // l = strtol(str2, &end, 16);     // 16진수
-    // printf("%s %ld %s %d\n", str2, l, end, (int)*end);
+    // printf("%s %ld %s %d\n", str2, l, end, (int)*end);   // 10FFHello 4351 Hello 72
 
     /* 
         Numbers to strings
         Use sprintf() instead of itoa(), ftoa()
     */
-    // _itoa는 많이 사용하지않는다. 대신 sprintf()함수를 선호
+    // _itoa, _ftoa는 많이 사용하지않는다. 대신 sprintf()함수를 선호
     char temp[100];
     puts(_itoa(10, temp, 16));  // 10을 16진수로 표현
 

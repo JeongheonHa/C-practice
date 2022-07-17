@@ -28,7 +28,7 @@ void ToUpper(char* str)
         *str = toupper(*str);
         /*if (islower(*str))
             * str = toupper(*str); */   // 이미 구현되어있음
-        str++;
+        str++;  // 주소를 증가
     }
 }
 
