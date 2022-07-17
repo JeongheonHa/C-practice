@@ -44,10 +44,13 @@ int main()
 // puts(str);
 
 char input[100] = "";
-int ret = scanf("%10s", input); // 입력 : "Just do it, do it!\n", 10개만 읽는다. (빈칸을 만나면 stop)
-printf("%s\n", input);  // 출력 : "Just", scanf()함수는 빈칸을 만나면 더 이상 읽지 않는다.
+scanf("%10s", input); // 입력 : "Just do it, do it!\n", 10개만 읽는다. (빈칸을 만나면 stop)
+int ret = printf("%s\n", input);  // 출력 : "Just", scanf()함수는 빈칸을 만나면 더 이상 읽지 않는다.
+printf("%d\n", ret);
 ret = scanf("%10s", input); // 버퍼에 남아있는 문자열을 읽는다.
 printf("%s\n", input);  // 출력 : do
+printf("%d\n", ret);
+
 
 /* custom function */
 
