@@ -47,10 +47,10 @@ int main()
     float arr2d[2][4] = { {1.0f, 2.0f, 3.0f, 4.0f}, {5.0f, 6.0f, 7.0f, 8.0f}};
 
     float (*pa)[4]; // 4개의 float를 가진 배열에 대한 포인터 (포인터 하나)
-    float* ap[2];   // 원소가 2개인 포인터의 배열
+    float* ap[2];   // 원소가 2개인 포인터의 배열 (원소 : 주소)
 
-    printf("%zu\n", sizeof(pa));    // 8 in x64
-    printf("%zu\n", sizeof(ap));    // 16 in x64
+    printf("%zu\n", sizeof(pa));    // 8 in x64, arr2d의 첫번째 원소의 주소 사이즈
+    printf("%zu\n", sizeof(ap));    // 16 in x64, arr2d[0], arr2d[1]의 첫번째 원소의 주소
     printf("\n");
 
     pa = arr2d; // 첫번째 주소 대입 가능
@@ -62,7 +62,7 @@ int main()
     ap[1] = arr2d[1];   // 가능
 
     // float (*pa)[4]
-    printf("%llu %llu\n", (unsigned long long)pa, (unsigned long long)(pa + 1));    // 6136525904 6136525920, pa : 주소 자체를 대입
+    printf("%llu %llu\n", (unsigned long long)pa, (unsigned long long)(pa + 1));    // 6136525904 6136525920, pa : arr2d 자체를 대입
     printf("%llu %llu\n", (unsigned long long)arr2d[0], (unsigned long long)arr2d[1]); // 6136525904 6136525920
     printf("%llu %llu\n", (unsigned long long)pa[0], (unsigned long long)(pa[0] + 1)); // 6136525904 6136525908
     printf("%f\n", pa[0][0]);
@@ -74,6 +74,8 @@ int main()
 
     // float* ap[2]
     printf("%llu %llu\n", (unsigned long long)ap, (unsigned long long)(ap + 1));    // 6136525888 6136525896, ap : 포인터를 담는 배열이 새로 생겨난 것
+    printf("%llu\n", (unsigned long long)&ap);  // 6136525888, ap는 포인터이지만 배열로서 만들어졌기 때문에 배열의 성질을 갖는다. 배열의 이름이 배열의 대표 주소인 것 처럼
+    //  ap + 1은 arr2d가 담긴 포인터 변수 ap[1]의 주소를 말하는 것이다.
     printf("%llu %llu\n", (unsigned long long)arr2d[0], (unsigned long long)arr2d[1]); // 6136525904 6136525920
     printf("%llu %llu\n", (unsigned long long)ap[0], (unsigned long long)(ap[0] + 1)); // 6136525904 6136525908
     printf("%f\n", ap[0][0]);
