@@ -7,7 +7,8 @@
         "name": "Debug",
         "program": "${fileDirname}/${fileBasenameNoExtension}",
         "args": [],
-        "cwd": "${fileDirname}"
+        "cwd": "${fileDirname}",
+        "preLaunchTask": "gcc build custom"
       }
     ]
   }

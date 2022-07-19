@@ -9,9 +9,28 @@
             "command": "/usr/bin/gcc",
             "args": [
                 "-g",
-                "${fileDirname}/*.cc",
+                "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "gcc build custom",
+            "command": "/usr/bin/gcc",
+            "args": [
+                "-g",
+                "${fileDirname}/main.c",
+                "${fileDirname}/second.c",
+                "-o",
+                "${fileDirname}/main"
             ],
             "options": {
                 "cwd": "/usr/bin"
@@ -27,7 +46,7 @@
             "command": "/usr/bin/g++",
             "args": [
                 "-g",
-                "${fileDirname}/*.cc",
+                "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}.out"
             ],
