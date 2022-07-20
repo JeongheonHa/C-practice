@@ -6,7 +6,7 @@
         "request": "launch",
         "name": "Debug",
         "program": "${fileDirname}/${fileBasenameNoExtension}",
-        "args": [],
+        "args": ["intput.txt", "output.txt"],
         "cwd": "${fileDirname}"
       }
     ]
