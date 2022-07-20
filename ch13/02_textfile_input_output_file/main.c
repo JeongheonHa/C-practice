@@ -6,7 +6,9 @@
 int main(int argc, char* argv[]) // main에서 명령줄 인수를 받아오고 있는 중
 {
     int ch;
-    FILE* fr;   // 파일을 처리할 때 필요한 데이터의 묶음에 대한 포인터 (데이터의 묶음 : 구조체)
+    FILE* fr ,* fw;   // 파일을 처리할 때 필요한 데이터의 묶음에 대한 포인터 (데이터의 묶음 : 구조체)
+
+    const char* out_filename = "copy.txt";
 
     /*
         typedef struct _iobuf (데이터의 묶음을 FILE이라는 자료형이 있는 것 처럼 사용)
@@ -36,6 +38,12 @@ int main(int argc, char* argv[]) // main에서 명령줄 인수를 받아오고 
         exit(EXIT_FAILURE);
     }
 
+    if ((fw = fopen(out_filename, "w")) == NULL)    // open a text file for writing
+    {
+        printf("Can't open %s\n", out_filename);
+        exit(EXIT_FAILURE);
+    }
+
     /*
         fopen mode strings for text files (" ")
         - r : reading
@@ -51,12 +59,14 @@ int main(int argc, char* argv[]) // main에서 명령줄 인수를 받아오고 
     {
         fputc(ch, stdout);  // stdout대신 stderr를 넣을 경우 stderr stream을 통해 출력 (redirection), (fputc를 사용하는 것이 보다 안정적이다.)
         // putc(ch, stdout);    // same as putchar(ch);
+        fputc(ch, fw);
 
         count++;
     }
 
     fclose(fr); // file stream을 다 사용한 경우 반드시 닫아줘야한다. (버퍼에 아직 처리하지 못한 데이터가 남아있는 경우 처리해줄 수 있디)
-
+    fclose(fw);
+    
     printf("File %s has %lu character\n", argv[1], count);
 
     return 0;
