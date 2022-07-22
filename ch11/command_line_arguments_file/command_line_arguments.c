@@ -53,7 +53,7 @@ int main(int argc, char * argv[])
 
     // char str1[] = "1024Hello";
     // char* end;
-    // long l = strtol(str1, &end, 10);    // 10진수로 바꾼다. (&end는 이중 포인터)
+    // l = strtol(str1, &end, 10);    // 10진수로 바꾼다. (&end는 이중 포인터)
     // printf("%s %ld %s %d\n", str1, l, end, (int)*end);   // 1024Hello 1024 Hello 72
     // // str1문자열을 10진수로 변환하다가 변환이 안되는 부분의 포인터를 end에 넣는다.
 
