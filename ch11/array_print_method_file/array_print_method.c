@@ -44,39 +44,39 @@ int main()
 // puts(str);
 
 char input[100] = "";
-scanf("%10s", input); // 입력 : "Just do it, do it!\n", 10개만 읽는다. (빈칸을 만나면 stop)
+scanf("%10s", input);             // 입력 : "Just do it, do it!\n", 10개만 읽는다. (빈칸을 만나면 stop)
 int ret = printf("%s\n", input);  // 출력 : "Just", scanf()함수는 빈칸을 만나면 더 이상 읽지 않는다.
-printf("%d\n", ret);
-ret = scanf("%10s", input); // 버퍼에 남아있는 문자열을 읽는다.
-printf("%s\n", input);  // 출력 : do
-printf("%d\n", ret);
+printf("%d\n", ret);              // 5 (printf는 문자의 길이를 반환한다. \n을 써줄경우 \n포함한 문자의 길이를 반환)
+ret = scanf("%10s", input);       // 버퍼에 남아있는 문자열을 읽는다.
+printf("%s\n", input);            // 출력 : do
+printf("%d\n", ret);              // 1 (scanf는 형식에 맞게 들어온 포맷 형식의 개수가 반환값이다.)
 
 
 /* custom function */
 
-// custom_put("Just ");
-// custom_put("Do it!");
+custom_put("Just ");
+custom_put("Do it!");
 
-// printf("%d\n", custom_put2("12345"));
+printf("%d\n", custom_put2("12345"));
 
-// return 0;
+return 0;
 }
 
-// void custom_put(const char* str)
-// {
-//     while (*str != '\0')    // while(*str) 과 같은 코드 (스타일 차이)
-//         putchar(*str++);
-// }
+void custom_put(const char* str)
+{
+    while (*str != '\0')    // while(*str) 과 같은 코드 (스타일 차이)
+        putchar(*str++);
+}
 
-// int custom_put2(const char* str)
-// {
-//     int count = 0;
-//     while (*str)
-//     {
-//         putchar(*str++);
-//         count++;
-//     }
-//     putchar('\n');
+int custom_put2(const char* str)
+{
+    int count = 0;
+    while (*str)
+    {
+        putchar(*str++);
+        count++;
+    }
+    putchar('\n');
 
-//     return count;
-// }
+    return count;
+}
