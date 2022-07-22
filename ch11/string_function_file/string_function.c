@@ -10,12 +10,12 @@ int main()
     /* strlen() */
     // 문자열의 길이 반환
 
-    // char msg[] = "Just,"" do it!";
-    // puts(msg);
-    // printf("Length %lu\n", strlen(msg));    // 12
-    // fit_str(msg,4);
-    // puts(msg);
-    // printf("Length %lu\n", strlen(msg));    // 4
+    char msg[] = "Just,"" do it!";
+    puts(msg);
+    printf("Length %lu\n", strlen(msg));    // 12
+    fit_str(msg,4);
+    puts(msg);
+    printf("Length %lu\n", strlen(msg));    // 4
 
 
     /* strcat() and strncat() */
@@ -58,7 +58,7 @@ int main()
 
     // char dest[100] = "";
     // char source[] = "Start programming!";
-    // dest = source;  // error
+    // dest = source;  // error, 배열의 주소를 바꾸는 것이기 때문에 안된다.
     // dest = "Start something";   // error
 
     // strcpy(dest, source);   // source를 destination에 복사
