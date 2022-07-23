@@ -62,11 +62,11 @@ void static_count_caller()
     // 지역 변수 ct의 포인터를 반환하지만 지역 변수 ct는 함수가 끝나면 사라져 버린다.
     int* count()
     {
-        int ct = 0; 
+        int ct = 0; // 지역 변수
         printf("count = %d %lld\n", ct, (long long)&ct);
         ct++;
 
-        return &ct;
+        return &ct; // stack내에 쌓인 메모리의 주소를 반환 (함수가 끝나면 stack에 쌓인 메모리는 사라지기 때문에 잘못된 코드)
     }
 
     // <2> 

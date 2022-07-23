@@ -93,13 +93,13 @@ void selectionSort(char* arr[], int n)
             if (strcmp(arr[j], arr[min_idx]) < 0)
             min_idx = j;
         }
-        swap(&arr[min_idx], &arr[i]);
+        swap(&arr[min_idx], &arr[i]);   // 포인터 자체의 주소
     }
 }
 
 void swap(char** xp, char** yp)
 {
-    char* temp = *xp;
+    char* temp = *xp;   // 포인터가 가리키는 문자열 주소 바꿈
     *xp = *yp;
     *yp = temp;
 }
