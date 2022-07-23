@@ -68,7 +68,7 @@ int main()
     // 일시적으로 myThreadFun 함수가 메모리와 cpu에 2 copy가 작동한다. 
     // thread 1, thread 2에서 지역 변수가 사용하는 메모리를 각자 갖고있다.
     pthread_create(&thread_id1, NULL, myThreadFun, NULL);   // myThreadFun을 실행시키는 thread를 실행시키고 
-                                                            // 그 thread에 대한 식별자를 &thread_id1 자리에 에 넣어 준다
+                                                            // 그 thread에 대한 식별자를 &thread_id1 자리에 넣어 준다
     pthread_create(&thread_id2, NULL, myThreadFun, NULL);
 
     // <2>

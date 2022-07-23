@@ -32,7 +32,7 @@ int main()
         - doesn't initialize the bytes added (기존의 할당된 메모리 보다 더 필요로 한경우 기존 데이터를 복사하고 새로 추가된 부분은 초기화 해주지 않는다)
         - return NULL if can't enlarge the memory block
         - if first argument is NULL, it behaves like malloc() (ptr이 없다면)
-        - if second argument is 0, it frees the memory block (기존 메모리 free)
+        - if second argument is 0, it frees the memory block (size가 0이라면 기존 메모리 free)
         - malloc 이나 calloc으로 받아도 realloc 가능
     */
 
@@ -45,8 +45,8 @@ int main()
     ptr2 = (int*)realloc(ptr, n * sizeof(int)); // 다른 포인터 변수 선언, realloc(기존 메모리의 포인터, 새로 할당 받고 싶은 메모리 사이즈)
     // ptr = (int*)realloc(ptr, n * sizeof(int));   // 기존의 포인터에 메모리만 증가한 형태 (이렇게 사용할 수 있다.)
 
-    printf("%p %p\n", ptr, ptr2);   // 0x128f04080 0x128f04080 (원래는 다른다)
-
+    printf("%p %p\n", ptr, ptr2);   // 0x128f04080 0x128f04080 (원래는 다른다, 기존 메모리 공간에 여유가 있을 경우 
+                                    // 운영체제가 기존은 포인터를 쓰게 하는 경우가 있다)
     printf("%d\n", ptr[0]); // 1
 
     if (!ptr2)

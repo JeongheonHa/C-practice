@@ -114,7 +114,7 @@ int main()
 
         int idx3(int c, int r, int d)
         {
-            static const itn cr = col * row;
+            static const int cr = col * row;
             return c + col * r + cr * d;
         }
     */
