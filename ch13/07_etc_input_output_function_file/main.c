@@ -28,25 +28,25 @@ int main()
     /* setvbuf(fp) */
     // buffer의 설정을 바꿔줄 수 있다.
 
-    // fp = fopen("input.txt", "r");
+    fp = fopen("input.txt", "r");
 
-    // char buffer[32] = {'\0', }; // 배열 선언
+    char str[32] = {'\0', }; // 배열 선언
 
-    // setvbuf(fp, buffer, _IOFBF, sizeof(buffer));    // buffer라는 배열의 공간의 buffer로 사용하는 뜻 (_IOLBF, _IOFBF, _IONBF)
-    //                                                 // _IOLBF : 라인(Line) 하나씩을 꺼내서 버퍼에 저장
-    //                                                 // _IOFBF : 내용 전체(Full)를 꺼내서 버퍼에 저장
-    //                                                 // _IONBF : 버퍼를 생성하지 않는다. (No)
-    // ch = fgetc(fp); // read just only a single character
+    setvbuf(fp, str, _IOFBF, sizeof(str));    // str이라는 배열의 공간을 buffer로 사용하라는 뜻 (_IOLBF, _IOFBF, _IONBF)
+                                                    // _IOLBF : 라인(Line) 하나씩을 꺼내서 버퍼에 저장
+                                                    // _IOFBF : 내용 전체(Full)를 꺼내서 버퍼에 저장
+                                                    // _IONBF : 버퍼를 생성하지 않는다. (No)
+    ch = fgetc(fp); // read just only a single character
 
-    // // dump buffer
-    // for (int i = 0; i < sizeof(buffer); ++i)
-    //         printf("%c", buffer[i]);    // "I choose a lazy person to do a, 한글자만 읽었는데 버퍼에 내용이 다 찼다. 
-    //                                     // 해당 파일의 내용을 모두 읽을 것으로 예상이 되면 미리 버퍼에 내용을 모두 채워 놓는다.
-    //                                     // 파일에서 버퍼로 옮기는 것은 느리기때문에 한번에 많은 양을 가져오고 버퍼에서 글자를 
-    //                                     // 가져오는 것은 비교적 빠르기때문이다 (c언어는 효울성을 중요시 하기 때문)
-    //     printf("\n");
+    // dump buffer
+    for (int i = 0; i < sizeof(str); ++i)
+            printf("%c", str[i]);    // "I choose a lazy person to do a, 한글자만 읽었는데 버퍼에 내용이 다 찼다. 
+                                        // 해당 파일의 내용을 모두 읽을 것으로 예상이 되면 미리 버퍼에 내용을 모두 채워 놓는다.
+                                        // 파일에서 버퍼로 옮기는 것은 느리기때문에 한번에 많은 양을 가져오고 버퍼에서 글자를 
+                                        // 가져오는 것은 비교적 빠르기때문이다 (c언어는 효울성을 중요시 하기 때문)
+        printf("\n");
 
-    // fclose(fp);
+    fclose(fp);
 
     /* fflush() */
     // buffer에 쌓여있는 데이터들을 싹 비워내라

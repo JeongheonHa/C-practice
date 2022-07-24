@@ -66,7 +66,7 @@ int main()
         printf("ferror = %d\n", ferror(fp));    // 0, return 0 (ok), ferror() : 파일 스트림이 읽는 과정에서 에러가 있는지 없는지를 확인
                                                 // 에러가 없다면 0 반환, 있다면 1 반환
 
-        fwrite(&n, sizeof(n), 1, fp);
+        fwrite(&n, sizeof(n), 1, fp);           // rb mode에서 write를 할 수 없는 상태
 
         printf("ferror = %d\n", ferror(fp));    // 1, fwrite함수로 강제로 쓰려고 해서 먼가 error가 있다는 것을 알려주고자 1을 반환한다.
 
